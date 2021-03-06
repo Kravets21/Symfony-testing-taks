@@ -6,9 +6,11 @@ use App\Repository\OrderRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use App\Entity\OrderItem;
 
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
+ * @ORM\Table(name="`order`")
  */
 class Order
 {
@@ -24,6 +26,11 @@ class Order
      */
     private $items;
     
+    public function __construct()
+    {
+        $this->items = new ArrayCollection();
+    }
+    
     /**
      * @ORM\Column(type="string", length=50)
      */
@@ -35,50 +42,14 @@ class Order
     private $adress;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=12)
      */
     private $phone;
-    
-    public function __construct()
-    {
-        $this->items = new ArrayCollection();
-    }
     
     /**
      * @return Collection|OrderItem[]
      */
-    public function getItems(): Collection
-    {
-        return $this->items;
-    }
     
-    public function addItem(OrderItem $item): self
-    {
-        if (!$this->items->contains($item)) {
-            $this->items[] = $item;
-            $item->setOrderRef($this);
-        }
-
-        return $this;
-    }
-    
-    public function removeItem(OrderItem $item): self
-    {
-        if ($this->items->removeElement($item)) {
-            // set the owning side to null (unless already changed)
-            if ($item->getOrderRef() === $this) {
-                $item->setOrderRef(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getBuyerName(): ?string
     {
         return $this->buyer_name;
@@ -113,5 +84,43 @@ class Order
         $this->phone = $phone;
 
         return $this;
+    }
+    
+    public function getItems(): Collection
+    {
+        return $this->items;
+    }
+    
+    public function addItem(OrderItem $item): self
+    {
+        if (!$this->items->contains($item)) {
+            $this->items[] = $item;
+            $item->setOrderRef($this);
+        }
+
+        return $this;
+    }
+    
+    public function removeItem(OrderItem $item): self
+    {
+        if ($this->items->removeElement($item)) {
+            if ($item->getOrderRef() === $this) {
+                $item->setOrderRef(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+    
+    public function createOrder(): self
+    {
+        $order = new self();
+
+        return $order;
     }
 }

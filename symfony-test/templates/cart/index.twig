@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block body %}
+        {% if cart.items.count > 0 %}
+	    <aside class="basket">
+		<h2>Your shopping-cart</h2>
+	    	{% for item in cart.items %}
+		<div class="basket-item">
+		    <div class="basket-item-wrap">
+			<span class="basket-item_title">{{ item.product.name }}</span>
+			<span class="basket-item_price">{{ item.product.price }}$</span>
+		    </div>
+		    <a href="{{ path('delete', { id : item.id }) }}" class="basket-item_button">Delete</a>
+		</div> 
+	    	{% endfor %} 
+	    <a href="{{ path('order') }}" class="basket_save-button">Order now</a>
+	    </aside>
+    {% else %}
+        <p>Your cart is empty. Go to the <a href="{{ path('home') }}">homepage</a>.</p>
+    {% endif %}
+{% endblock %}

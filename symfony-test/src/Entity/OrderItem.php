@@ -57,4 +57,12 @@ class OrderItem
 
         return $this;
     }
+    
+    public static function createItem(Product $product): self
+    {
+        $item = new self();
+        $item->setProduct($product);
+
+        return $item;
+    }
 }
