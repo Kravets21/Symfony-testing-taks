@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp7/htdocs/symfony-test/src/Entity/Orders.php</file>
+            <file>file:/C:/xampp7/htdocs/symfony-test/src/Entity/Basket.php</file>
+            <file>file:/C:/xampp7/htdocs/symfony-test/templates/home/home.twig</file>
+            <file>file:/C:/xampp7/htdocs/symfony-test/src/Repository/BasketRepository.php</file>
+            <file>file:/C:/xampp7/htdocs/symfony-test/src/Repository/ProductsRepository.php</file>
+            <file>file:/C:/xampp7/htdocs/symfony-test/src/Entity/Products.php</file>
+            <file>file:/C:/xampp7/htdocs/symfony-test/public/css/styles.css</file>
+            <file>file:/C:/xampp7/htdocs/symfony-test/src/Form/ProductForm.php</file>
+            <file>file:/C:/xampp7/htdocs/symfony-test/src/Repository/OrdersRepository.php</file>
+            <file>file:/C:/xampp7/htdocs/symfony-test/src/Controller/HomepageController.php</file>
+        </group>
+    </open-files>
+</project-private>

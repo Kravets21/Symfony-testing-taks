@@ -1,0 +1,133 @@
+*{
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog_form{
+    display: none;
+}
+
+.catalog-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+aside{
+    display: flex;
+    flex-direction: column; 
+    width: 30%;
+}
+
+.product{
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background:#5eb5e0;
+    text-align: center;
+    height: 100px;
+}
+
+.basket{
+    background: #aaaaaa;
+    min-height: 300px; 
+}
+
+h2{
+    text-align: center;
+}
+
+.basket-item{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    background: #969896;
+    padding: 15px;
+}
+
+.basket_save-button{
+    margin: 0 auto;
+    width: 100px;
+    background: #3adb76;
+    padding: 5px;
+    border-radius: 40%;
+}
+
+.basket-item_button{
+    background: red;
+    color: white;
+    padding: 5px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    background: #aaaaaa;
+    height: 200px;
+    border-radius: 5%;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.menu button{
+    background: #A46A1F;
+    padding: 3px;
+    width: 150px;
+}
+
+.add-product_form.open{
+    display: block;
+}
+
+.add-product_form.open{
+    display: block;
+}
+
+.add-product_form{
+    display: none;
+    margin: auto;
+}
+
+.catalog_form.open{
+    display: block;
+}
+
+.form-input{
+    margin-bottom: 20px;
+    margin-left: 5px;
+    padding: 5px;
+}
+
+.product_edit_button{
+    position: absolute;
+    text-decoration: none;
+    color: orange;
+    margin-left: 145px;
+    margin-top: -14px;
+}
+
+.edit{
+    background: #5eb5e0;
+    margin: 50px;
+    padding: 20px;
+    width: 300px;
+}
+
+.product_button{
+    background-color: #fff;
+    border-radius: 44%;
+    width: 80px;
+    padding-left: -1px;
+    margin-left: 38px;
+    margin-top: 10px;
+}

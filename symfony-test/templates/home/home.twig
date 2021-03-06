@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container">
+
+    <div class="menu">
+	<button class="catalog">All Products</button>
+	<button class="add-product">Add new product</button>
+    </div>
+    
+    <div class="catalog_form">
+	<div class="catalog-wrap">
+	{% for product in products %}
+	    <div class="product">
+		<a class="product_edit_button" href="{{ path('edit', { id : product.id }) }}">Edit</a>
+		<span class="product_title">{{ product.name }}</span>
+		<span class="product_price">{{ product.price }}$</span>
+		<a href="" class="product_button">Buy</a>
+	    </div>
+	{% endfor %}
+	</div>
+    </div>
+    
+    <div class="add-product_form">
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}
+    </div>
+    
+    <aside class="basket">
+	<h2>Your shopping-cart</h2>
+    {#	{% for item in basket %}#} {# тут будет сессия в которой храним товары  #}
+	<div class="basket-item">
+	    <div class="basket-item-wrap">
+		<span class="basket-item_title">ExampleProduct:</span>
+		<span class="basket-item_price">100$</span>
+	    </div>
+	    <button class="basket-item_button">Delete</button>
+	</div> 
+    {#	{% endfor %}#} 
+    <button class="basket_save-button">Order now</button> {# Потом надо сделать после нажатия переход на оформления заказа #}
+    </aside>
+
+</div>
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/home.js') }}"></script>
+{% endblock %}
